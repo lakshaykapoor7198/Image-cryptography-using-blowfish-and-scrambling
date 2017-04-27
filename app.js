@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-var myPythonScriptPath = 'script.py';
+var myPythonScriptPath = 'draft1.py';
 
 // Use python shell
 var PythonShell = require('python-shell');
