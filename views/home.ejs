@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>ImageCrypto</title>
+ 	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="animate.css">
+  <link rel="icon" href="icon.jpg" type="image/x-icon" />
+  <script src="jquery.min.js"></script>
+  <script src="bootstrapt.min.js"></script>
+  <style>
+  	input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+  </style>
+
+</head>
+<body>
+
+ 
+	<nav class='navbar navbar-default' style='margin-bottom: 0px;border-radius: 0;;'>
+		<div class="container-fluid">
+			<div class='navbar-header'>
+				<a href='#' class='navbar-brand active' style='font-size:32px'>CryptoImage</a>
+				<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='#navbar'>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+					<span class='icon-bar'></span>
+				</button>
+			</div>
+			<div class='collapse navbar-collapse' id='navbar'>
+				<ul class='nav navbar-nav navbar-right'>
+					<li style='font-size:32px'><a href="/">By Sahaja and Lakshay</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron" style='background-color:#d2691e;color:white;font-family:Georgia;'>
+		<center><h1 class='wow jello' style='display:inline;'>Scramble + Blowfish</h1><img src="fish.png" style='width:80px;height:80px;margin-left:40px;border-radius:50%'><br></center>
+	</div>
+
+	<div class="container" style='margin-top:90px;margin-bottom:150px;font-family:Georgia'>
+		<div class='col-sm-3'></div>
+		<div class='col-sm-6'>
+			<form method='post' action='/post' enctype='multipart/form-data'>
+				<center>
+				<div class='form-group wow zoomInLeft'>
+					<label for="file-upload" class="custom-file-upload" style='width:400px;color:white;background-color:#000080;font-size:35px;font-family:serif'>Select Image</label>
+					<input type="file" id="file-upload" name="file-upload" class='form-control'>
+				</div>
+				<br>
+				
+					<div class='form-group wow zoomInRight' style='width:200px'>
+						<input type="submit" value='UPLOAD' class='form-control btn-success'>
+					</div>
+				</center>
+			</form>
+		</div>
+		<div class='col-sm-3'></div>
+	</div>
+<%if(data==true){%>
+    <div class='container-fluid dfe' style='background-color:#87cefa;color:white;padding-bottom:30px;font-family:Georgia;'>
+        <div class='row'>
+            <div class='col-sm-3 wow fadeInDown'>
+                <center><h2>SENT</h2>
+                    <br>
+                    <img src='<%=sent%>' style='width:200px;height:200px'/>
+                </center>
+            </div>
+            <div class='col-sm-3 wow fadeInDown' id='as'>
+                <center><h2>SCRAMBLED</h2>
+                    <br>
+                     <img src='scrambled.png' style='width:200px;height:200px'/>
+                </center>
+            </div>
+            <div class='col-sm-3 wow fadeInDown'>
+                <center><h2>ENCRYPTED</h2>
+                <br>
+                    <img src='encrypted.png' style='width:200px;height:200px'/>
+                </center>
+            </div>
+            <div class='col-sm-3 wow fadeInDown'>
+                <center><h2>RECIEVED</h2>
+                <br>
+                    <img src='unscrambled.png' style='width:200px;height:200px'/>
+                </center>
+            </div>
+        </div>
+    </div>
+<%}%>
+    
+<script src='wow.js'></script>
+<script type='text/javascript'>
+new WOW().init();
+</script>
+</body>
+</html>
